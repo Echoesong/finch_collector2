@@ -3,15 +3,15 @@ from django.shortcuts import render
 finches = [ 
     {'name': 'Red',
      'color': 'Red',
-     'fav color': 'Red'},
+     'fav_color': 'Red'},
 
      {'name': 'Blue',
      'color': 'Blue',
-     'fav color': 'Blue'},
+     'fav_color': 'Blue'},
 
      {'name': 'Purple',
      'color': 'Purple',
-     'fav color': 'Purple'}]
+     'fav_color': 'Purple'}]
 # Create your views here.
 
 def home(request):
@@ -19,3 +19,8 @@ def home(request):
 
 def about(request):
     return render(request, 'about.html')
+
+def index(request):
+    return render(request, 'finches/index.html', {
+        'finches': finches
+    })
